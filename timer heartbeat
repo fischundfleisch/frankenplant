@@ -1,5 +1,5 @@
-const unsigned long DURATION_ON = 15 * 60 * 60 * 1000; //globale Konstanten in CAPS
-const unsigned long DURATION_OFF  = 9 * 60 * 60 * 1000;
+const unsigned long DURATION_ON = 1 * 60 * 60 * 1000; //globale Konstanten in CAPS
+const unsigned long DURATION_OFF  = 1 * 60 * 60 * 1000;
 const unsigned long HEARTBEAT_FREQ = 10 * 60 * 1000;
 const unsigned int LED_PIN = 5;
 
@@ -33,7 +33,7 @@ unsigned long time_span_heart = act_time - heartbeat_timer_;
     if (time_span > DURATION_ON) {
       digitalWrite(LED_PIN, HIGH);
       light_on_ = false;
-      act_time_ = millis();
+      duration_timer_ = millis();
       Serial.println("schalte aus");
     }
   }
@@ -41,7 +41,7 @@ unsigned long time_span_heart = act_time - heartbeat_timer_;
     if (time_span > DURATION_OFF) {
       digitalWrite(LED_PIN, LOW);
       light_on_ = true;
-      act_time_ = millis();
+      duration_timer_ = millis();
       Serial.println("schalte ein");
     }
   }
