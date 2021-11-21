@@ -1,6 +1,6 @@
-const unsigned long DURATION_ON = 1 * 60 * 60 * 1000; //globale Konstanten in CAPS
-const unsigned long DURATION_OFF  = 1 * 60 * 60 * 1000;
-const unsigned long HEARTBEAT_FREQ = 10 * 60 * 1000;
+const unsigned long DURATION_ON = 1UL * 60UL * 60UL * 1000UL; //globale Konstanten in CAPS
+const unsigned long DURATION_OFF  = 1UL * 60UL * 60UL * 1000UL;
+const unsigned long HEARTBEAT_FREQ = 10UL * 60UL * 1000UL;
 const unsigned int LED_PIN = 5;
 
 unsigned long duration_timer_ = 0;
