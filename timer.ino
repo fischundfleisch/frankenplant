@@ -12,7 +12,7 @@ void setup() {
   Serial.println("System startet...");
 
   pinMode(LED_PIN, OUTPUT);
-  digitalWrite(LED_PIN, HIGH);
+  digitalWrite(LED_PIN, LOW);
   light_on_ = true;
 
   act_time_ = millis();
@@ -28,16 +28,18 @@ unsigned long time_span = millis() - act_time_;
   
   if (light_on_) {
     if (time_span > DURATION_ON) {
-      digitalWrite(LED_PIN, LOW);
+      digitalWrite(LED_PIN, HIGH);
       light_on_ = false;
       act_time_ = millis();
+      Serial.println("schalte aus");
     }
   }
   else {
     if (time_span > DURATION_OFF) {
-      digitalWrite(LED_PIN, HIGH);
+      digitalWrite(LED_PIN, LOW);
       light_on_ = true;
       act_time_ = millis();
+      Serial.println("schalte ein");
     }
   }
 }
