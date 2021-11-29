@@ -1,10 +1,5 @@
 #include <Adafruit_SleepyDog.h>
 
-
-// to do:
-// nach Restart laufen ständig die Millis durch, er kommt scheinbar nicht mehr über das Setup hinaus.
-
-
 const unsigned long DURATION_ON = 13UL * 60UL * 60UL * 1000UL; //globale Konstanten in CAPS
 const unsigned long DURATION_OFF  = 11UL * 60UL * 60UL * 1000UL;
 const unsigned long HEARTBEAT_FREQ = 10UL * 60UL * 1000UL;
@@ -67,8 +62,6 @@ void loop() {
     Serial.println("Resetten...");
     Watchdog.enable(15);
     for (;;) {};
-    //softwareReset::simple()    ; // Restart the program
-    //digitalWrite(RESET_PIN, HIGH);
     Serial.println("Das passiert nie");
   }
 }
